@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TestTask</string>
+    <string name="add_button">Add button</string>
+    <string name="name_hint">Name</string>
+    <string name="description_hint">Description</string>
+    <string name="city">City</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+    <string name="default_radio">Default</string>
+    <string name="visited_radio">Visited</string>
+    <string name="missed_radio">Missed</string>
+    <string name="date">Date</string>
+    <string name="date_formatter">%d-%d-%d</string>
+    <string name="time">Time</string>
+    <string name="time_formatter">%02d-%02d</string>
+    <string name="weather_error">Can\'t update weather for event %s</string>
+</resources>

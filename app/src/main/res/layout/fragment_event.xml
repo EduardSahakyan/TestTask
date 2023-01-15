@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="event"
+            type="com.example.domain.entities.Event" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{event.name}"
+            android:hint="@string/name_hint" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_name"
+            android:text="@{event.description}"
+            android:hint="@string/description_hint" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_description"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{event.place}"
+            android:hint="@string/city" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_place"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{event.date}"
+            android:inputType="none"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/date" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_date"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{event.time}"
+            android:inputType="none"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/time" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remove"
+            app:layout_constraintBottom_toTopOf="@id/btn_save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_time"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/radio_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_radio"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radio_visited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/visited_radio"/>
+
+            <RadioButton
+                android:id="@+id/radio_missed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/missed_radio"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
